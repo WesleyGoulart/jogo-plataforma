@@ -17,7 +17,11 @@ max_velv = 8;
 
 // Variaveis de controle
 chao = false;
+yscale = 1;
+xscale = 1;
 
+
+// State Machine
 enum STATE
 {
 	PARADO, MOVENDO, DASH

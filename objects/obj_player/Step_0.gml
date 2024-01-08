@@ -54,7 +54,14 @@ switch(estado)
 		if (!chao) velv += grav;
 		
 		// Pulando
-		if (chao && _jump) velv = -max_velv;
+		if (chao && _jump) 
+		{
+			velv = -max_velv;
+			
+			// Alterando a escala
+			xscale = 0.5;
+			yscale = 1.5;
+		}
 	
 		break;
 		
@@ -63,6 +70,10 @@ switch(estado)
 		break;
 		
 }
+
+// Voltando para a escala original
+xscale = lerp(xscale, 1, 0.15);
+yscale = lerp(yscale, 1, 0.15);
 
 
 // Limitando as velocidades
