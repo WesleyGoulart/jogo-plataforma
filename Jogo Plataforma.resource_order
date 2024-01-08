@@ -18,6 +18,8 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
+    {"name":"spr_vel","order":2,"path":"sprites/spr_vel/spr_vel.yy",},
+    {"name":"obj_vel","order":3,"path":"objects/obj_vel/obj_vel.yy",},
     {"name":"obj_player_vest","order":2,"path":"objects/obj_player_vest/obj_player_vest.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
   ],

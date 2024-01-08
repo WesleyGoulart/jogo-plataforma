@@ -91,6 +91,20 @@ switch(estado)
 		// Aplicando a movimentação
 		velh = lerp(velh, _avanco_h, acel);
 		
+		// Fazendo poeira
+		if (abs(velh) > max_velh - 0.5 && chao)
+		{
+			var _chance = random(100);
+			if (_chance > 90)
+			{
+				for (var _i = 0; _i < irandom_range(4, 10); _i++)
+				{
+				var _xx = random_range(x - sprite_width/2, x + sprite_width/2);
+		
+				instance_create_depth(_xx, y, depth - 1000, obj_vel);	
+				}
+			}
+		}
 	
 		// Gravidade e parede
 		if (!chao && (parede_dir || parede_esq || timer_parede))
@@ -99,6 +113,18 @@ switch(estado)
 			if (velv > 0) // Estou na parede e estou caindo
 			{
 				velv = lerp(velv, deslize, acel);
+				var _chance = random(100);
+				if (_chance > 90)
+				{
+					for (var _i = 0; _i < irandom_range(4, 10); _i++)
+					{
+						var _onde = parede_dir - parede_esq;
+						var _xx = x + _onde * sprite_width/2;
+						var _yy = y + random_range(-sprite_height/2, 0);
+		
+						instance_create_depth(_xx, _yy, depth - 1000, obj_vel);	
+					}
+				}
 			}
 			else
 			{
@@ -113,6 +139,16 @@ switch(estado)
 				velh = -max_velh;
 				xscale = 0.5;
 				yscale = 1.5;
+				
+				// Criando poeira
+				for (var _i = 0; _i < irandom_range(4, 10); _i++)
+				{
+					var _onde = parede_dir - parede_esq;
+					var _xx = x + sprite_width/2;
+					var _yy = y + random_range(-sprite_height/2, 0);
+		
+					instance_create_depth(_xx, _yy, depth - 1000, obj_vel);	
+				}
 			}
 			else if (ultima_parede && _jump)
 			{
@@ -120,6 +156,16 @@ switch(estado)
 				velh = max_velh;
 				xscale = 0.5;
 				yscale = 1.5;	
+				
+				// Criando poeira
+				for (var _i = 0; _i < irandom_range(4, 10); _i++)
+				{
+					var _onde = parede_dir - parede_esq;
+					var _xx = x - sprite_width/2;
+					var _yy = y + random_range(-sprite_height/2, 0);
+		
+					instance_create_depth(_xx, _yy, depth - 1000, obj_vel);	
+				}
 			}
 		}
 		else if (!chao) // Não estou no chão, nem na parede
@@ -136,6 +182,15 @@ switch(estado)
 			// Alterando a escala
 			xscale = 0.5;
 			yscale = 1.5;
+			
+			
+		// Criando a poeira
+		for (var _i = 0; _i < irandom_range(4, 10); _i++)
+		{
+			var _xx = random_range(x - sprite_width, x + sprite_width);
+		
+			instance_create_depth(_xx, y, depth - 1000, obj_vel);
+		}
 		}
 		
 		// Buffer do pulo
@@ -156,6 +211,16 @@ switch(estado)
 				
 				timer_pulo = 0;
 				timer_queda = 0;
+				
+				
+				
+				// Criando a poeira
+				for (var _i = 0; _i < irandom_range(4, 10); _i++)
+				{
+					var _xx = random_range(x - sprite_width, x + sprite_width);
+		
+					instance_create_depth(_xx, y, depth - 1000, obj_vel);
+				}
 			}
 			
 			timer_queda--;

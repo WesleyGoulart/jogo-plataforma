@@ -36,6 +36,8 @@
   "resources": [
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_plat","path":"objects/obj_plat/obj_plat.yy",},},
+    {"id":{"name":"spr_vel","path":"sprites/spr_vel/spr_vel.yy",},},
+    {"id":{"name":"obj_vel","path":"objects/obj_vel/obj_vel.yy",},},
     {"id":{"name":"obj_player_vest","path":"objects/obj_player_vest/obj_player_vest.yy",},},
     {"id":{"name":"spr_plat","path":"sprites/spr_plat/spr_plat.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
