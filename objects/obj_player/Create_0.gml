@@ -13,6 +13,7 @@ velv = 0;
 // Limites das velocidades
 max_velh = 6;
 max_velv = 8;
+len = 10; 
 
 
 // Bônus para o pulo
@@ -28,6 +29,8 @@ buffer_pulo = false;
 chao = false;
 yscale = 1;
 xscale = 1;
+dura = room_speed/4;
+dir = 0;
 
 
 // State Machine
