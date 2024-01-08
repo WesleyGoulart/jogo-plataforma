@@ -3,16 +3,32 @@
 
 // Checando se estou no chão
 chao = place_meeting(x, y + 1, obj_plat);
+parede_dir = place_meeting(x + 1, y, obj_plat);
+parede_esq = place_meeting(x - 1, y, obj_plat);
 
 // Configurando o meu timer do pulo
 if (chao)
 {
 	timer_pulo = limite_pulo;
+	carga = 1;
 }
 else
 {
 	if (timer_pulo > 0) timer_pulo--;
 }
+
+if (parede_dir || parede_esq)
+{
+	if(parede_dir) ultima_parede = 0;
+	else ultima_parede = 1;
+	timer_parede = limite_parede;
+}
+else
+{
+	if (timer_parede > 0) timer_parede--;
+}
+
+
 
 // Controles
 var _left, _right, _up, _down, _jump, _jump_s, _avanco_h, _dash;
@@ -58,9 +74,14 @@ switch(estado)
 		}
 		
 		// Dash
-		if (_dash)
+		if (_dash && carga > 0)
 		{
+			// Decidindo a direção
+			dir = point_direction(0, 0, (_right - _left), (_down - _up));
+
+			
 			estado = STATE.DASH;
+			carga--;
 		}
 	
 		break;
@@ -71,8 +92,41 @@ switch(estado)
 		velh = lerp(velh, _avanco_h, acel);
 		
 	
-		// Gravidade
-		if (!chao) velv += grav;
+		// Gravidade e parede
+		if (!chao && (parede_dir || parede_esq || timer_parede))
+		{
+			// Não estou no chão, mas estou na parede
+			if (velv > 0) // Estou na parede e estou caindo
+			{
+				velv = lerp(velv, deslize, acel);
+			}
+			else
+			{
+				// Estou subindo
+				velv += grav;
+			}
+			
+			// Pulando pelas paredes
+			if (!ultima_parede && _jump) // Estou na parede e tentei pular
+			{
+				velv = -max_velv;
+				velh = -max_velh;
+				xscale = 0.5;
+				yscale = 1.5;
+			}
+			else if (ultima_parede && _jump)
+			{
+				velv = -max_velv;
+				velh = max_velh;
+				xscale = 0.5;
+				yscale = 1.5;	
+			}
+		}
+		else if (!chao) // Não estou no chão, nem na parede
+		{
+			velv += grav;
+		}
+		
 		
 		// Pulando
 		if (_jump && (chao || timer_pulo))
@@ -112,13 +166,14 @@ switch(estado)
 		
 		
 		// Dash
-		if (_dash)
+		if (_dash && carga > 0)
 		{
 			// Decidindo a direção
 			dir = point_direction(0, 0, (_right - _left), (_down - _up));
 
 			
 			estado = STATE.DASH;
+			carga--;
 		}
 		
 		// Limitando as velocidades
@@ -147,7 +202,11 @@ switch(estado)
 		}
 		
 		
-		image_blend = c_red;
+		// Criando o rastro
+		var _rastro = instance_create_layer(x, y, layer, obj_player_vest);
+		_rastro.xscale = xscale;
+		_rastro.yscale = yscale;
+		
 		
 		// Saindo do estado
 		if (dura <= 0)
@@ -164,6 +223,22 @@ switch(estado)
 		break;
 		
 }
+
+
+switch(carga)
+{
+	case 0:
+	sat = lerp(sat, 50, 0.05);
+	break;
+	
+	case 1:
+	sat = lerp(sat, 255, 0.05);
+	break;
+}
+
+// Definindo a cor dele
+image_blend = make_color_hsv(20, sat, 255);
+
 
 // Voltando para a escala original
 xscale = lerp(xscale, 1, 0.15);
