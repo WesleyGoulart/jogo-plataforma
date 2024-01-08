@@ -2,13 +2,25 @@
 // Você pode escrever seu código neste editor
 
 // Checando se estou no chão
-chao = place_meeting(x, y + 1, obj_plat)
+chao = place_meeting(x, y + 1, obj_plat);
+
+// Configurando o meu timer do pulo
+if (chao)
+{
+	timer_pulo = limite_pulo;
+}
+else
+{
+	if (timer_pulo > 0) timer_pulo--;
+}
 
 // Controles
-var _left, _right, _jump, _avanco_h;
+var _left, _right, _jump, _jump_s, _avanco_h;
 _left = keyboard_check(ord("A"));
 _right = keyboard_check(ord("D"));
-_jump = keyboard_check(ord("K"));
+_jump = keyboard_check_pressed(ord("K"));
+_jump_s = keyboard_check_released(ord("K"));
+
 
 // Configurando informações da movimentação
 _avanco_h = (_right - _left) * max_velh;
@@ -54,7 +66,7 @@ switch(estado)
 		if (!chao) velv += grav;
 		
 		// Pulando
-		if (chao && _jump) 
+		if (_jump && (chao || timer_pulo))
 		{
 			velv = -max_velv;
 			
@@ -62,6 +74,32 @@ switch(estado)
 			xscale = 0.5;
 			yscale = 1.5;
 		}
+		
+		// Buffer do pulo
+		if (_jump) timer_queda = limite_buffer;
+		
+		if(timer_queda > 0) buffer_pulo = true;
+		else buffer_pulo = false;
+		
+		if (buffer_pulo) // Eu posso pular
+		{
+			if (chao || timer_pulo) // As demais condições são verdadeiras também	
+			{
+				velv = -max_velv;
+				
+				// Alterando a escala
+				xscale = 0.5;
+				yscale = 1.5;
+				
+				timer_pulo = 0;
+				timer_queda = 0;
+			}
+			
+			timer_queda--;
+		}
+		
+		// Controlando a altura do pulo
+		if(_jump_s && velv < 0) velv *= 0.7;
 	
 		break;
 		

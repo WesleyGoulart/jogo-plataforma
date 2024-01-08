@@ -15,6 +15,15 @@ max_velh = 6;
 max_velv = 8;
 
 
+// Bônus para o pulo
+limite_pulo = 6;
+timer_pulo = limite_pulo;
+
+limite_buffer = 6;
+timer_queda = 0;
+buffer_pulo = false;
+
+
 // Variaveis de controle
 chao = false;
 yscale = 1;

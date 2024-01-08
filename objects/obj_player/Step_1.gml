@@ -16,4 +16,3 @@ if (_temp && !chao) // Acabei de tocar no chão
 
 
 
-
