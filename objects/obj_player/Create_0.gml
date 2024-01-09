@@ -39,6 +39,7 @@ dura = room_speed/4;
 dir = 0;
 carga = 1;
 ultima_parede = 0;
+ver = 1;
 
 // Crontrolando cor
 sat = 255;

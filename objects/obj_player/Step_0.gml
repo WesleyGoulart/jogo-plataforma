@@ -88,6 +88,14 @@ switch(estado)
 		
 	case STATE.MOVENDO:
 	
+	
+		// Abaixando
+		if (chao && _down)
+		{
+			xscale = 1.5;
+			yscale = 0.5;
+		}
+	
 		// Aplicando a movimentação
 		velh = lerp(velh, _avanco_h, acel);
 		
