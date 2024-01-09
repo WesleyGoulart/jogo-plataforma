@@ -35,10 +35,13 @@
   },
   "resources": [
     {"id":{"name":"spr_morte","path":"sprites/spr_morte/spr_morte.yy",},},
+    {"id":{"name":"obj_part","path":"objects/obj_part/obj_part.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"spr_serra","path":"sprites/spr_serra/spr_serra.yy",},},
     {"id":{"name":"obj_plat","path":"objects/obj_plat/obj_plat.yy",},},
     {"id":{"name":"spr_vel","path":"sprites/spr_vel/spr_vel.yy",},},
+    {"id":{"name":"spr_bonus","path":"sprites/spr_bonus/spr_bonus.yy",},},
+    {"id":{"name":"obj_bonus","path":"objects/obj_bonus/obj_bonus.yy",},},
     {"id":{"name":"obj_vel","path":"objects/obj_vel/obj_vel.yy",},},
     {"id":{"name":"obj_player_vest","path":"objects/obj_player_vest/obj_player_vest.yy",},},
     {"id":{"name":"spr_plat","path":"sprites/spr_plat/spr_plat.yy",},},
