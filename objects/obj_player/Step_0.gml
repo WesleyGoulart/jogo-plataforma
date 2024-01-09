@@ -295,6 +295,11 @@ switch(estado)
 	
 		break;
 		
+		
+		case STATE.MORTE:
+		
+			room_restart();
+		
 }
 
 

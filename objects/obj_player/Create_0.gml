@@ -48,7 +48,7 @@ sat = 255;
 // State Machine
 enum STATE
 {
-	PARADO, MOVENDO, DASH
+	PARADO, MOVENDO, DASH, MORTE
 }
 
 estado = STATE.PARADO
