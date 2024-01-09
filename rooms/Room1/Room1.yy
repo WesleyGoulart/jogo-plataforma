@@ -15,6 +15,7 @@
     {"name":"inst_E36CCB5","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_61A2C6A1","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_44CB5475","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_22B4B2F1","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -32,6 +33,7 @@
             {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_serra","path":"objects/obj_serra/obj_serra.yy",},"propertyId":{"name":"limite","path":"objects/obj_serra/obj_serra.yy",},"value":"200",},
           ],"rotation":0.0,"scaleX":0.73333335,"scaleY":0.73333335,"x":496.0,"y":176.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_44CB5475","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_bonus","path":"objects/obj_bonus/obj_bonus.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":192.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_22B4B2F1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_plat_cima","path":"objects/obj_plat_cima/obj_plat_cima.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":1.0,"x":384.0,"y":416.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
