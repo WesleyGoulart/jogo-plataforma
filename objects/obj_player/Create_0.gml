@@ -52,3 +52,10 @@ enum STATE
 }
 
 estado = STATE.PARADO
+
+// Criando a camera
+if (!instance_exists(obj_camera))
+{
+		// Camera não existe
+		instance_create_layer(0, 0, "instances", obj_camera);
+}
