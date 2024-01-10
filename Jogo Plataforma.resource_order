@@ -17,9 +17,11 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"spr_proximo","order":7,"path":"sprites/spr_proximo/spr_proximo.yy",},
     {"name":"spr_morte","order":4,"path":"sprites/spr_morte/spr_morte.yy",},
     {"name":"obj_part","order":7,"path":"objects/obj_part/obj_part.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
+    {"name":"obj_proximo","order":9,"path":"objects/obj_proximo/obj_proximo.yy",},
     {"name":"spr_plat_cima","order":6,"path":"sprites/spr_plat_cima/spr_plat_cima.yy",},
     {"name":"spr_serra","order":3,"path":"sprites/spr_serra/spr_serra.yy",},
     {"name":"spr_vel","order":2,"path":"sprites/spr_vel/spr_vel.yy",},
@@ -30,6 +32,7 @@
     {"name":"obj_plat_cima","order":8,"path":"objects/obj_plat_cima/obj_plat_cima.yy",},
     {"name":"obj_serra","order":4,"path":"objects/obj_serra/obj_serra.yy",},
     {"name":"obj_morte","order":5,"path":"objects/obj_morte/obj_morte.yy",},
+    {"name":"Room2","order":1,"path":"rooms/Room2/Room2.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
   ],
 }
