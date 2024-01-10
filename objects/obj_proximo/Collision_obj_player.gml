@@ -3,14 +3,18 @@
 
 
 // Checando se posso ir para a próxima room
-if (room_next(room) != -1)
+
+if (qtd <= 0)
 {
-	room_goto_next();
-}
-else
-{
-	// Não tem outra room para ir
-	game_restart();
+	if (room_next(room) != -1)
+	{
+		room_goto_next();
+	}
+	else
+	{
+		// Não tem outra room para ir
+		game_restart();
+	}
 }
 
 
