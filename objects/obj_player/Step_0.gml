@@ -315,7 +315,7 @@ switch(carga)
 }
 
 // Definindo a cor dele
-image_blend = make_color_hsv(20, sat, 255);
+// image_blend = make_color_hsv(20, sat, 255);
 
 
 // Voltando para a escala original

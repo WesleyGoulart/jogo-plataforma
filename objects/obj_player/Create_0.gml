@@ -57,5 +57,5 @@ estado = STATE.PARADO
 if (!instance_exists(obj_camera))
 {
 		// Camera não existe
-		instance_create_layer(0, 0, "instances", obj_camera);
+		instance_create_layer(0, 0, "Instances", obj_camera);
 }
