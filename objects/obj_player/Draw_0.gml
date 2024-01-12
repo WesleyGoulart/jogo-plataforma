@@ -5,6 +5,8 @@
 // Desenhando a minha sprite com a escala atualizada
 
 if (velh != 0) ver = sign(velh);
+//draw_sprite_ext(sprite_index, image_index, x, y, 0.2 * ver, 0.2, image_angle, image_blend, image_alpha)
+
 draw_sprite_ext(sprite_index, image_index, x, y, xscale * ver, yscale, image_angle, image_blend, image_alpha)
 
 
