@@ -3,6 +3,7 @@
 
 // Cheacando se o player existe no jogo
 
+_posicao = obj_inimigo01;
 
 image_angle = direction + 90;
 
@@ -16,10 +17,17 @@ image_yscale = 2;
 
 _cores = choose(c_white);
 
+if (obj_player.x)
+{
+	direction = point_direction(x, y, obj_player.x, obj_player.y);
+}
+
+
+/*
 
 if (instance_exists(obj_player))
 {
 	direction = point_direction(x, y, obj_player.x, obj_player.y);
 }
 
-
+*/

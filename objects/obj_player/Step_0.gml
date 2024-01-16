@@ -98,6 +98,7 @@ switch(estado)
 	
 		// Aplicando a movimentação
 		velh = lerp(velh, _avanco_h, acel);
+
 		
 		// Fazendo poeira
 		if (abs(velh) > max_velh - 0.5 && chao)
