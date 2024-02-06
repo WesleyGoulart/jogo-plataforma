@@ -22,8 +22,32 @@ if (place_meeting(x, y + velv, obj_plat))
 	velv = 0;
 }
 
+// Colisão horizontal
+if (place_meeting(x + velh, y, obj_parede_nao_escalavel))
+{
+	while (!place_meeting(x + sign(velh), y, obj_parede_nao_escalavel))
+	{
+		x += sign(velh);
+	}
+	velh = 0;
+}
+
+
+// Colisão vertical
+if (place_meeting(x, y + velv, obj_parede_nao_escalavel))
+{
+	while (!place_meeting(x, y + sign(velv), obj_parede_nao_escalavel))
+	{
+		y += sign(velv);
+	}
+	velv = 0;
+}
+
+
+
 x += velh;
 y += velv;
+
 
 
 
