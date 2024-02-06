@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 // Checando se eu acabei de cair no chão
-var _temp = place_meeting(x, y + 1, obj_plat);
+var _temp = place_meeting(x, y + 1, obj_parede_nao_escalavel);
 
 if (_temp && !chao) // Acabei de tocar no chão
 {
@@ -17,6 +17,8 @@ if (_temp && !chao) // Acabei de tocar no chão
 		instance_create_depth(_xx, y, depth - 1000, obj_vel);
 	}
 }
+
+
 
 
 

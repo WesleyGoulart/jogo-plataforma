@@ -2,7 +2,7 @@
 // Você pode escrever seu código neste editor
 
 // Checando se estou no chão
-chao = place_meeting(x, y + 1, obj_plat);
+chao = place_meeting(x, y + 1, obj_parede_nao_escalavel);
 parede_dir = place_meeting(x + 1, y, obj_plat);
 parede_esq = place_meeting(x - 1, y, obj_plat);
 
